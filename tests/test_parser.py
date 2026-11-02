@@ -85,7 +85,7 @@ def test_malformed_json_skipped(tmp_path):
         f.write("THIS IS NOT JSON AT ALL\n")
         f.write('{"timestamp": broken}\n')
 
-    df = parse_logs(str(log_dir))
+    df = parse_logs(str(log_dir), output_path=str(tmp_path / "events.csv"))
     assert isinstance(df, pd.DataFrame), "parse_logs should return a DataFrame"
     assert len(df) == 3, f"Expected 3 valid rows, got {len(df)}"
 
@@ -106,8 +106,8 @@ def test_deterministic_tie_breaking(tmp_path):
     ]
     _write_jsonl(log_file, records)
 
-    df1 = parse_logs(str(log_dir))
-    df2 = parse_logs(str(log_dir))
+    df1 = parse_logs(str(log_dir), output_path=str(tmp_path / "events1.csv"))
+    df2 = parse_logs(str(log_dir), output_path=str(tmp_path / "events2.csv"))
 
     assert list(df1["host"]) == list(df2["host"]), (
         f"Tie-breaking not deterministic: {list(df1['host'])} != {list(df2['host'])}"
@@ -141,7 +141,7 @@ def test_output_schema(tmp_path):
         _make_event("2024-01-15T09:30:00+00:00", severity="Low"),
     ])
 
-    df = parse_logs(str(log_dir))
+    df = parse_logs(str(log_dir), output_path=str(tmp_path / "events.csv"))
     required = {"timestamp_h", "timestamp_iso", "event_type", "source_ip", "host", "severity"}
     missing = required - set(df.columns)
     assert not missing, f"Missing columns: {missing}"
@@ -163,7 +163,7 @@ def test_output_sorted(tmp_path):
     ]
     _write_jsonl(log_dir / "events.jsonl", records)
 
-    df = parse_logs(str(log_dir))
+    df = parse_logs(str(log_dir), output_path=str(tmp_path / "events.csv"))
     ts = df["timestamp_h"].values
     assert np.all(np.diff(ts) >= 0), "Parsed events not sorted by timestamp_h"
 
@@ -177,6 +177,6 @@ def test_empty_input_dir(tmp_path):
     log_dir = tmp_path / "empty_logs"
     log_dir.mkdir()
 
-    df = parse_logs(str(log_dir))
+    df = parse_logs(str(log_dir), output_path=str(tmp_path / "events.csv"))
     assert isinstance(df, pd.DataFrame), "Should return a DataFrame even when empty"
     assert len(df) == 0, f"Expected 0 rows for empty dir, got {len(df)}"

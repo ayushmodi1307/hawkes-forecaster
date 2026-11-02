@@ -180,7 +180,7 @@
 
 <div class="header">
     <h1>🛡️ Poisson-to-Hawkes Attack Wave Forecaster</h1>
-    <p>Advisory SOC Intelligence Platform — Exported Standalone Brief | Generated 2026-11-02 16:29:54 UTC</p>
+    <p>Advisory SOC Intelligence Platform — Exported Standalone Brief | Generated 2026-11-02 17:54:53 UTC</p>
 </div>
 
 <div class="container">
@@ -199,7 +199,7 @@
     <!-- Alert Banner -->
     <div class="alert-box">
         <h3>🚨 Status: NORMAL / PASSIVE MONITORING</h3>
-        <p><strong>Evaluation Rationale:</strong> Observed count (0.00) below threshold (0.00).</p>
+        <p><strong>Evaluation Rationale:</strong> Observed count (9.20) below threshold (18.00).</p>
         <p style="margin: 0;"><strong>Recommended SOC Playbook Action:</strong> Continue passive precursor telemetry ingestion; no immediate wave threat.</p>
     </div>
 
@@ -207,32 +207,32 @@
     <div class="grid-cards">
         <div class="card">
             <div class="title">Current Intensity λ(t)</div>
-            <div class="value">0.00 <span style="font-size: 14px; font-weight: normal;">ev/h</span></div>
-            <div class="subtext">Background μ: 0.00 ev/h</div>
+            <div class="value">4.25 <span style="font-size: 14px; font-weight: normal;">ev/h</span></div>
+            <div class="subtext">Background μ: 2.67 ev/h</div>
         </div>
         <div class="card">
             <div class="title">2-Hour Horizon Forecast</div>
-            <div class="value">0.0 <span style="font-size: 14px; font-weight: normal;">events</span></div>
+            <div class="value">9.2 <span style="font-size: 14px; font-weight: normal;">events</span></div>
             <div class="subtext">Closed-form expected count</div>
         </div>
         <div class="card">
             <div class="title">4-Hour Horizon Forecast</div>
-            <div class="value">0.0 <span style="font-size: 14px; font-weight: normal;">events</span></div>
+            <div class="value">18.9 <span style="font-size: 14px; font-weight: normal;">events</span></div>
             <div class="subtext">Cumulative threat volume</div>
         </div>
         <div class="card">
             <div class="title">Branching Ratio (n = α/β)</div>
-            <div class="value">0.00</div>
+            <div class="value">0.45</div>
             <div class="subtext">Subcritical (Stable)</div>
         </div>
         <div class="card">
             <div class="title">Cascade Amplification</div>
-            <div class="value">1.00x</div>
+            <div class="value">1.83x</div>
             <div class="subtext">Borel Mean Cluster Size 1/(1-n)</div>
         </div>
         <div class="card">
             <div class="title">Model Convergence</div>
-            <div class="value">⚠️ UNCONVERGED</div>
+            <div class="value">✅ PASS</div>
             <div class="subtext">MLE SLSQP Stationarity Bound</div>
         </div>
     </div>
@@ -255,31 +255,31 @@
                 <tr>
                     <td><strong>Rung 0</strong></td>
                     <td>Homogeneous Poisson MLE</td>
-                    <td>-inf</td>
-                    <td>inf</td>
-                    <td>inf</td>
+                    <td>212.58</td>
+                    <td>-423.16</td>
+                    <td>-419.26</td>
                     <td>Equidispersed (Fano = 1.00)</td>
                 </tr>
                 <tr>
                     <td><strong>Rung 1</strong></td>
                     <td>Diurnal Inhomogeneous Poisson</td>
-                    <td>-0.00</td>
-                    <td>48.00</td>
-                    <td>0.00</td>
+                    <td>665.75</td>
+                    <td>-1283.50</td>
+                    <td>-1189.90</td>
                     <td>24-Hour Cyclic Modulation</td>
                 </tr>
                 <tr style="background-color: #ebf8ff;">
                     <td><strong>Rung 2</strong></td>
                     <td><strong>Exponential Hawkes MLE (Self-Exciting)</strong></td>
-                    <td><strong>-0.07</strong></td>
-                    <td><strong>6.15</strong></td>
-                    <td><strong>0.15</strong></td>
-                    <td><strong>Overdispersed (Fano(1h) = nan, Fano(4h) = nan)</strong></td>
+                    <td><strong>224.87</strong></td>
+                    <td><strong>-443.74</strong></td>
+                    <td><strong>-432.04</strong></td>
+                    <td><strong>Overdispersed (Fano(1h) = 1.81, Fano(4h) = 3.45)</strong></td>
                 </tr>
             </tbody>
         </table>
         <p style="margin-top: 14px; font-size: 13px; color: #2c5282; background: #ebf8ff; padding: 10px 14px; border-radius: 6px;">
-            💡 <strong>Model Selection Conclusion:</strong> Hawkes MLE achieves a decisive AIC improvement (ΔAIC = inf) over Poisson baselines, confirming statistically significant threat clustering.
+            💡 <strong>Model Selection Conclusion:</strong> Hawkes MLE achieves a decisive AIC improvement (ΔAIC = 20.6) over Poisson baselines, confirming statistically significant threat clustering.
         </p>
     </div>
 
@@ -297,28 +297,28 @@
             <tbody>
                 <tr>
                     <td><strong>10th Percentile (P10)</strong></td>
-                    <td>0.0 events</td>
+                    <td>4.0 events</td>
                     <td>Lower confidence bound (benign background activity)</td>
                 </tr>
                 <tr>
                     <td><strong>50th Percentile (Median)</strong></td>
-                    <td>0.0 events</td>
+                    <td>9.0 events</td>
                     <td>Expected conditional wave volume</td>
                 </tr>
                 <tr>
                     <td><strong>90th Percentile (P90)</strong></td>
-                    <td>0.0 events</td>
+                    <td>16.0 events</td>
                     <td>Heavy-tail burst threshold</td>
                 </tr>
                 <tr>
                     <td><strong>99th Percentile (P99)</strong></td>
-                    <td>0.0 events</td>
+                    <td>24.0 events</td>
                     <td>Extreme coordinated adversary campaign scenario</td>
                 </tr>
                 <tr>
                     <td><strong>Threshold Level</strong></td>
-                    <td><strong>0.00 events</strong></td>
-                    <td><strong>Operational Advisory Alert Boundary (Hysteresis Band: 0.00)</strong></td>
+                    <td><strong>18.00 events</strong></td>
+                    <td><strong>Operational Advisory Alert Boundary (Hysteresis Band: 16.20)</strong></td>
                 </tr>
             </tbody>
         </table>
@@ -337,7 +337,7 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <tr><td>T+71.25h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+71.27h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+72.17h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+72.31h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+73.02h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+73.23h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+73.33h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+74.65h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+74.65h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr><tr><td>T+74.84h</td><td>Precursor Event</td><td>HIGH</td><td>Telemetry Stream</td></tr>
             </tbody>
         </table>
     </div>

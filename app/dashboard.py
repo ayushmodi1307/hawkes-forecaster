@@ -157,6 +157,13 @@ def load_or_generate_dataset(source: str) -> Tuple[np.ndarray, Optional[pd.DataF
     events_path = REPO_ROOT / "data" / "processed" / "events.csv"
     labels_path = REPO_ROOT / "data" / "raw" / "labels.csv"
 
+    if source == "Processed SIEM Events (data/processed/events.csv)":
+        if not events_path.exists() or (events_path.exists() and pd.read_csv(events_path).shape[0] == 0):
+            try:
+                from src.parser import parse_logs
+                parse_logs(str(REPO_ROOT / "data" / "raw"), str(events_path))
+            except Exception:
+                pass
     if source == "Processed SIEM Events (data/processed/events.csv)" and events_path.exists():
         df = pd.read_csv(events_path)
         if "timestamp_h" in df.columns:
