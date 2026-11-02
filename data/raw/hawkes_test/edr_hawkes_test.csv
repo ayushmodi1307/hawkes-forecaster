@@ -1,0 +1,32 @@
+timestamp,event_type,host,source_ip,process_name,parent_process,user,pid,ppid,severity,command_line_length
+2024-01-01T00:21:32+00:00,process_create,SRV-04,10.132.176.208,svchost.exe,cmd.exe,jsmith,38141,56547,Medium,311
+2024-01-01T09:03:22+00:00,process_create,WS-0002,10.226.209.138,svchost.exe,net.exe,Network Service,39984,27539,Medium,412
+2024-01-01T01:13:28-08:00,process_create,WS-0020,172.16.26.135,cmd.exe,net.exe,svc_backup,13710,507,Medium,48
+2024-01-01T13:19:31+00:00,process_create,WS-0032,172.16.16.11,svchost.exe,wscript.exe,adm_svc,54757,65019,Medium,177
+2024-01-01T13:44:42+00:00,process_create,WS-0031,192.168.139.194,cmd.exe,cmd.exe,svc_backup,62519,22525,Medium,21
+2024-01-01T14:16:07+00:00,process_create,WS-0015,192.168.79.212,cmd.exe,wscript.exe,alice.t,58163,58967,Medium,182
+2024-01-01T14:27:40+00:00,process_create,WS-0038,192.168.191.104,powershell.exe,powershell.exe,Local Service,31532,25218,Medium,267
+2024-01-01T15:20:28+00:00,process_create,WS-0038,10.6.212.186,cmd.exe,svchost.exe,svc_backup,49514,60535,Medium,150
+2024-01-01T21:52:22+00:00,process_create,WS-0024,192.168.87.36,wscript.exe,net.exe,alice.t,16805,37649,Medium,351
+2024-01-01T22:41:34+00:00,process_create,WS-0006,172.16.23.58,svchost.exe,svchost.exe,Local Service,25681,35954,Medium,390
+2024-01-02T00:04:38+00:00,process_create,WS-0012,172.16.23.87,powershell.exe,cmd.exe,bob.k,46742,13914,Medium,127
+2024-01-02T00:46:37+00:00,process_create,WS-0024,10.92.157.206,svchost.exe,net.exe,jsmith,22732,6247,Medium,342
+2024-01-02T02:26:29+00:00,process_create,WS-0016,10.246.172.241,cmd.exe,svchost.exe,bob.k,59365,29995,Medium,499
+2024-01-02T10:16:48+00:00,process_create,WS-0044,192.168.165.84,wscript.exe,cmd.exe,jsmith,41053,13094,Medium,340
+2024-01-02T12:06:57+00:00,process_create,WS-0017,192.168.17.250,powershell.exe,net.exe,Network Service,60464,38729,Medium,62
+2024-01-02T13:35:51+00:00,process_create,WS-0017,172.16.4.161,svchost.exe,powershell.exe,alice.t,17727,57734,Medium,244
+2024-01-02T14:39:43+00:00,process_create,WS-0038,172.16.30.109,net.exe,cmd.exe,bob.k,28266,14154,Medium,116
+2024-01-02T20:03:05-05:00,process_create,SRV-06,10.234.131.96,net.exe,svchost.exe,bob.k,44373,6662,Medium,473
+2024-01-03T13:20:38+00:00,process_create,WS-0006,10.146.99.220,powershell.exe,cmd.exe,Network Service,14351,18576,Medium,29
+2024-01-03T14:11:25+00:00,process_create,WS-0023,192.168.174.17,wscript.exe,wscript.exe,Network Service,37157,33909,Medium,418
+2024-01-05T00:22:24+00:00,process_create,WS-0010,192.168.51.4,powershell.exe,powershell.exe,SYSTEM,9503,48572,Medium,90
+2024-01-05T09:19:39+00:00,process_create,WS-0029,192.168.202.213,cmd.exe,wscript.exe,bob.k,27600,9444,Medium,238
+2024-01-06T02:40:28+00:00,process_create,WS-0001,10.243.42.133,cmd.exe,powershell.exe,helpdesk01,12050,40869,Medium,405
+2024-01-06T18:52:10+05:30,process_create,WS-0031,172.16.14.145,powershell.exe,svchost.exe,Network Service,39630,1193,Medium,209
+2024-01-06T15:53:48+00:00,process_create,WS-0007,10.180.130.41,wscript.exe,cmd.exe,jsmith,26439,34430,Medium,159
+2024-01-06T23:10:18+00:00,process_create,WS-0047,192.168.180.196,svchost.exe,svchost.exe,jsmith,21932,12188,Medium,472
+2024-01-07T00:40:47+00:00,process_create,WS-0020,172.16.23.135,powershell.exe,net.exe,jsmith,42452,27925,Medium,226
+2024-01-07T02:30:45+00:00,process_create,SRV-05,172.16.4.5,net.exe,wscript.exe,svc_backup,13253,35999,Medium,263
+2024-01-07T03:07:47+00:00,process_create,WS-0023,192.168.84.235,wscript.exe,cmd.exe,Network Service,59834,17666,Medium,454
+2024-01-07T07:20:11+00:00,process_create,WS-0028,172.16.14.218,cmd.exe,wscript.exe,Network Service,60736,20111,Medium,202
+2024-01-07T07:29:37+00:00,process_create,SRV-02,172.16.21.147,net.exe,powershell.exe,jsmith,14401,4630,Medium,153

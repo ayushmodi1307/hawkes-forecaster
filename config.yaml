@@ -1,0 +1,81 @@
+# Poisson-to-Hawkes Attack Wave Forecaster — Master Configuration
+# All tunables live here. No magic numbers in source files.
+
+project:
+  name: hawkes_attack_forecaster
+  version: "0.1.0"
+
+seeds:
+  simulate: 42
+  backtest: 123
+  bootstrap: 7
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  reports: reports
+  alerts_log: alerts.log
+
+simulation:
+  T_hours: 168.0            # 7 days total observation window
+  mu_background: 0.5        # background Poisson rate (events/hour)
+  diurnal_amplitude: 0.4    # A in mu(t) = mu0 * (1 + A*sin(2*pi*(t-phi)/24))
+  diurnal_phase_h: 8.0      # phi: hour of peak (8 AM)
+  hawkes_alpha: 0.6          # excitation magnitude per event
+  hawkes_beta: 1.2           # decay rate (per hour); alpha < beta => n < 1
+  hawkes_n: 0.5              # branching ratio n = alpha/beta (must be < 1)
+  wave_count: 5              # number of attack waves per scenario
+  wave_mu_boost: 4.0         # wave background rate multiplier
+  wave_duration_h: 2.0       # typical wave duration (hours)
+  killchain_stage_delays:    # mean delays between kill-chain stages (hours)
+    login_to_process: 0.5
+    process_to_lateral: 1.0
+    lateral_to_encrypt: 1.5
+  power_law_exponent: 1.5    # burst decay exponent for kill-chain family
+
+splits:
+  train_frac: 0.60
+  val_frac: 0.20
+  test_frac: 0.20
+  embargo_hours: 4.0         # embargo gap between folds to prevent leakage
+
+forecasting:
+  horizons_h: [2.0, 4.0]    # prediction horizons in hours
+  mc_samples: 1000           # K for Monte Carlo continuations
+  mc_seed_offset: 0          # added to base seed for MC reproducibility
+
+alerting:
+  alert_quantile: 0.95        # default historical quantile threshold
+  cooldown_hours: 0.5         # minimum time between consecutive alerts
+  hysteresis_factor: 0.9      # intensity must fall to threshold*factor to reset
+  fbeta_beta: 2.0             # beta for F_beta score (>1 weights recall)
+  webhook_url: null           # null = log only; set URL string to POST alerts
+  webhook_timeout_s: 5
+  webhook_retries: 3
+
+backtest:
+  walk_forward_step_h: 5.0    # hours between model refits
+  rolling_window_h: 72.0      # history window for rolling refit (hours)
+  forecast_grid_min: 5        # evaluation grid spacing (minutes)
+  n_scenarios: 20             # scenarios per family for bootstrap CIs
+  bootstrap_n: 1000           # bootstrap resamples for confidence intervals
+  min_events_to_fit: 10       # minimum events required before attempting a fit
+
+analysis:
+  fano_window_sizes_h: [0.5, 1.0, 2.0, 4.0, 8.0, 12.0]
+  bootstrap_lrt_samples: 499  # parametric bootstrap replicates
+  dispersion_alpha: 0.05      # significance level for dispersion test
+
+hawkes_fit:
+  n_starts: 5                 # number of multi-start optimization runs
+  beta_min: 0.01              # minimum beta (per hour)
+  beta_max: 100.0             # maximum beta (per hour)
+  n_min: 0.0001               # minimum branching ratio
+  n_max: 0.99                 # maximum branching ratio
+  mu_min: 1.0e-6              # minimum background rate
+  max_iter: 1000              # L-BFGS-B max iterations
+  gtol: 1.0e-6                # gradient tolerance
+
+diurnal:
+  n_bins: 24                  # hourly bins for diurnal model
+  regularization_lambda: 0.01 # L2 regularization to prevent zero-rate bins

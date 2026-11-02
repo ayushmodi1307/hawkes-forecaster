@@ -1,0 +1,35 @@
+timestamp,event_type,host,source_ip,process_name,parent_process,user,pid,ppid,severity,command_line_length
+2024-01-01T03:40:22+00:00,process_create,WS-0004,10.64.116.234,net.exe,wscript.exe,svc_backup,17075,62700,Medium,156
+2024-01-01T06:19:46+00:00,process_create,WS-0041,192.168.118.221,cmd.exe,wscript.exe,jsmith,14920,10817,Medium,141
+2024-01-01T07:08:00+00:00,process_create,SRV-08,172.16.20.227,svchost.exe,svchost.exe,Local Service,60398,40292,Medium,115
+2023-12-31T23:29:27-08:00,process_create,WS-0020,172.16.0.48,net.exe,wscript.exe,adm_svc,8234,28074,Medium,232
+2024-01-01T08:32:07+00:00,process_create,WS-0003,10.181.81.5,powershell.exe,cmd.exe,alice.t,62646,43178,Medium,132
+2024-01-01T08:43:57+00:00,process_create,WS-0036,192.168.208.177,powershell.exe,cmd.exe,Network Service,52770,54503,Medium,467
+2024-01-02T04:12:07+00:00,process_create,SRV-03,192.168.96.53,wscript.exe,svchost.exe,bob.k,14644,18251,Medium,453
+2024-01-02T08:17:11+00:00,process_create,WS-0045,192.168.159.110,cmd.exe,wscript.exe,Network Service,55122,12043,Medium,258
+2024-01-02T09:32:40+00:00,process_create,WS-0014,10.102.29.53,wscript.exe,powershell.exe,Network Service,62271,28944,Medium,390
+2024-01-02T11:36:55+00:00,process_create,SRV-05,172.16.7.143,svchost.exe,svchost.exe,alice.t,20475,57761,Medium,132
+2024-01-02T14:49:52+00:00,process_create,WS-0037,192.168.85.185,svchost.exe,net.exe,svc_backup,32512,19168,Medium,82
+2024-01-02T22:28:46+00:00,process_create,WS-0047,172.16.12.203,cmd.exe,net.exe,jsmith,37881,60099,Medium,276
+2024-01-02T22:56:22+00:00,process_create,SRV-08,10.0.243.217,powershell.exe,wscript.exe,bob.k,49736,63032,Medium,335
+2024-01-03T04:58:38+00:00,process_create,SRV-08,172.16.8.48,powershell.exe,svchost.exe,bob.k,9091,42230,Medium,305
+2024-01-03T05:34:41+00:00,process_create,SRV-07,10.122.36.36,cmd.exe,powershell.exe,bob.k,59465,25863,Medium,278
+2024-01-03T06:08:54+00:00,process_create,WS-0031,192.168.37.228,wscript.exe,wscript.exe,adm_svc,32018,23056,Medium,156
+2024-01-03T06:40:29+00:00,process_create,WS-0047,10.113.53.139,wscript.exe,powershell.exe,adm_svc,64195,53215,Medium,285
+2024-01-03T17:22:57+00:00,process_create,SRV-08,172.16.6.54,svchost.exe,svchost.exe,helpdesk01,10425,61667,Medium,310
+2024-01-03T18:21:18+00:00,process_create,WS-0034,10.137.252.44,wscript.exe,net.exe,alice.t,19754,15376,Medium,312
+2024-01-04T01:03:18+00:00,process_create,WS-0014,192.168.215.233,svchost.exe,powershell.exe,svc_backup,65493,61863,Medium,418
+2024-01-04T04:05:36+00:00,process_create,WS-0010,10.191.2.80,svchost.exe,powershell.exe,bob.k,23282,27214,Medium,145
+2024-01-04T04:20:24+00:00,process_create,WS-0004,192.168.73.118,svchost.exe,net.exe,Network Service,35619,44748,Medium,482
+2024-01-04T07:13:28+00:00,process_create,SRV-08,10.6.110.224,powershell.exe,powershell.exe,bob.k,59077,44521,Medium,398
+2024-01-04T16:54:53+00:00,process_create,WS-0011,172.16.12.153,wscript.exe,cmd.exe,Local Service,65388,7917,Medium,280
+2024-01-04T18:22:44+00:00,process_create,WS-0024,10.154.196.162,svchost.exe,net.exe,helpdesk01,210,57906,Medium,256
+2024-01-05T08:14:07+00:00,process_create,SRV-07,10.241.51.158,svchost.exe,net.exe,SYSTEM,48329,47825,Medium,318
+2024-01-05T11:32:37+00:00,process_create,WS-0011,172.16.13.33,cmd.exe,svchost.exe,jsmith,49514,4300,Medium,148
+2024-01-05T17:53:00+00:00,process_create,SRV-05,172.16.26.177,net.exe,svchost.exe,adm_svc,25123,56332,Medium,471
+2024-01-05T22:58:20+00:00,process_create,WS-0012,192.168.156.45,net.exe,net.exe,helpdesk01,26248,60903,Medium,401
+2024-01-06T03:22:34+00:00,process_create,WS-0042,10.34.156.70,svchost.exe,wscript.exe,Network Service,33756,40678,Medium,263
+2024-01-07T10:46:57+00:00,process_create,WS-0025,172.16.7.127,powershell.exe,svchost.exe,alice.t,43358,59951,Medium,384
+2024-01-07T12:16:40+00:00,process_create,WS-0025,172.16.29.241,cmd.exe,svchost.exe,Local Service,65225,46846,Medium,280
+2024-01-07T12:27:43+00:00,process_create,WS-0015,10.160.56.164,powershell.exe,cmd.exe,svc_backup,45513,50774,Medium,430
+2024-01-07T12:47:16+00:00,process_create,WS-0024,10.60.20.147,svchost.exe,net.exe,adm_svc,55606,44264,Medium,18

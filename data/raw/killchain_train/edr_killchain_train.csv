@@ -1,0 +1,20 @@
+timestamp,event_type,host,source_ip,process_name,parent_process,user,pid,ppid,severity,command_line_length
+2024-01-01T01:29:23+00:00,process_create,SRV-04,172.16.27.43,cmd.exe,svchost.exe,adm_svc,23733,46686,Medium,219
+2024-01-01T15:14:45+00:00,process_create,WS-0019,172.16.5.145,svchost.exe,powershell.exe,helpdesk01,39745,62194,Medium,139
+2024-01-01T21:32:23+00:00,process_create,WS-0025,10.130.133.176,wscript.exe,svchost.exe,adm_svc,56389,20857,Medium,318
+2024-01-01T21:56:11+00:00,process_create,SRV-09,192.168.83.121,cmd.exe,svchost.exe,Local Service,64515,5125,Medium,254
+2024-01-01T22:17:51+00:00,process_create,WS-0043,172.16.6.17,svchost.exe,svchost.exe,SYSTEM,47049,64139,Medium,274
+2024-01-02T20:53:50-08:00,process_create,WS-0008,172.16.30.10,net.exe,net.exe,jsmith,46540,38180,Medium,443
+2024-01-03T22:56:34+00:00,process_create,WS-0015,192.168.216.197,net.exe,svchost.exe,SYSTEM,36817,38170,Medium,407
+2024-01-04T04:03:11+00:00,process_create,WS-0023,10.33.17.166,wscript.exe,powershell.exe,adm_svc,44377,64810,Medium,325
+2024-01-04T09:58:40+00:00,process_create,WS-0025,10.57.79.54,cmd.exe,svchost.exe,adm_svc,22695,7703,Medium,209
+2024-01-04T18:21:32+00:00,process_create,WS-0025,172.16.6.249,cmd.exe,svchost.exe,adm_svc,14513,46593,Medium,372
+2024-01-04T19:17:17+00:00,process_create,WS-0017,172.16.29.53,powershell.exe,cmd.exe,bob.k,61956,29606,Medium,121
+2024-01-05T09:27:55+00:00,process_create,WS-0013,192.168.15.52,svchost.exe,cmd.exe,helpdesk01,48142,2279,Medium,488
+2024-01-06T09:05:44+00:00,process_create,WS-0010,172.16.22.175,cmd.exe,wscript.exe,Local Service,37828,56988,Medium,328
+2024-01-06T13:50:05+00:00,process_create,WS-0031,192.168.60.65,svchost.exe,wscript.exe,Network Service,29381,42814,Medium,116
+2024-01-06T16:39:05+00:00,process_create,WS-0032,10.202.33.37,powershell.exe,wscript.exe,jsmith,15502,15203,Medium,312
+2024-01-06T19:32:15+00:00,process_create,WS-0030,192.168.172.251,wscript.exe,wscript.exe,jsmith,918,57247,Medium,65
+2024-01-06T19:54:51+00:00,process_create,SRV-07,192.168.87.171,cmd.exe,net.exe,helpdesk01,23032,47057,Medium,231
+2024-01-07T01:50:33+05:30,process_create,WS-0045,10.222.234.165,powershell.exe,powershell.exe,svc_backup,44781,29868,Medium,303
+2024-01-07T14:57:57+00:00,process_create,WS-0034,172.16.26.10,powershell.exe,wscript.exe,adm_svc,6644,54637,Medium,380
