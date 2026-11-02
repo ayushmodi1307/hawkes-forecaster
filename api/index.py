@@ -16,10 +16,13 @@ if str(REPO_ROOT) not in sys.path:
 
 def get_html_dashboard() -> str:
     """Retrieve or generate the static exported HTML dashboard."""
-    html_file = REPO_ROOT / "reports" / "dashboard_export.html"
-    if html_file.exists():
-        with open(html_file, "r", encoding="utf-8") as f:
-            return f.read()
+    for candidate in [
+        REPO_ROOT / "public" / "index.html",
+        REPO_ROOT / "reports" / "dashboard_export.html",
+    ]:
+        if candidate.exists():
+            with open(candidate, "r", encoding="utf-8") as f:
+                return f.read()
 
     # Generate on demand if not found
     try:
@@ -47,15 +50,8 @@ class handler(BaseHTTPRequestHandler):
         if url_path == "":
             url_path = "/"
 
-        if url_path in ("/", "/index.html"):
-            content = get_html_dashboard().encode("utf-8")
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(content)))
-            self.end_headers()
-            self.wfile.write(content)
-
-        elif url_path == "/api/health":
+        url_lower = self.path.lower()
+        if "health" in url_lower:
             payload = json.dumps({
                 "status": "healthy",
                 "project": "hawkes_attack_forecaster",
@@ -65,10 +61,11 @@ class handler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(payload)))
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(payload)
 
-        elif url_path == "/api/forecast":
+        elif "forecast" in url_lower:
             payload = json.dumps({
                 "status": "active",
                 "model": "Exponential Hawkes MLE",
@@ -83,6 +80,7 @@ class handler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(payload)))
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(payload)
 
