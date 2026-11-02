@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hawkes-forecaster"
+version = "0.1.0"
+description = "Poisson-to-Hawkes Attack Wave Forecaster"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.vercel]
+entrypoint = "api/index.py"
